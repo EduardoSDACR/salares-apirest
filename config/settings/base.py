@@ -4,7 +4,6 @@ from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# SECRET_KEY = 'django-insecure-f6y%pqwu9v3y&cj2xx&yhy@z-l(7*510$7_k^n&g+%3vvh673a'
 SECRET_KEY = config('SECRET_KEY')
 
 # Application definition
