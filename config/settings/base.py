@@ -17,9 +17,14 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
 ]
 
-THIRD_PARTY_APPS = []
+THIRD_PARTY_APPS = [
+    'rest_framework',
+    'drf_yasg',
+]
 
-LOCAL_APPS = ["apirest.apps.ApirestConfig"]
+LOCAL_APPS = [
+    "apirest"
+]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
