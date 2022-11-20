@@ -674,7 +674,7 @@ class AppPermTaRiskDangers(models.Model):
     id = models.BigAutoField(primary_key=True)
     title = models.CharField(max_length=150, db_collation='SQL_Latin1_General_CP1_CI_AS')
     control = models.CharField(max_length=250, db_collation='SQL_Latin1_General_CP1_CI_AS', blank=True, null=True)
-    check_value = models.BooleanField()
+    check_value = models.BooleanField(db_column='check')
     head_ta = models.ForeignKey(AppPermTaHeads, models.DO_NOTHING)
     type_data = models.IntegerField(blank=True, null=True)
     created_at = models.DateTimeField(blank=True, null=True)
