@@ -3,8 +3,9 @@ from decouple import config
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
+#Using SQL Server
 DATABASES = {
     'default': {
         'ENGINE': 'mssql',

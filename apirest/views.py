@@ -1,8 +1,10 @@
 from apirest.models import *
 from apirest.serializers import *
 from rest_framework.viewsets import ModelViewSet
+from rest_framework.permissions import IsAuthenticated
 
 class AppPermArtAditionals(ModelViewSet):    
+    permission_classes = [IsAuthenticated]
     serializer_class = AppPermArtAditionalsSerializer
     queryset = AppPermArtAditionals.objects.all()
 
