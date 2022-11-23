@@ -370,8 +370,8 @@ class Files(models.Model):
     documenttype = models.IntegerField(db_column='documentType', blank=True, null=True)  # Field name made lowercase.
     file_url = models.TextField(db_collation='SQL_Latin1_General_CP1_CI_AS', blank=True, null=True)
     slug = models.CharField(max_length=255, db_collation='SQL_Latin1_General_CP1_CI_AS', blank=True, null=True)
-    parent = models.ForeignKey('self', models.DO_NOTHING, blank=True, null=True)
-    level = models.ForeignKey('Levels', models.DO_NOTHING, blank=True, null=True)
+    parent = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True)
+    level = models.ForeignKey('Levels', on_delete=models.CASCADE, blank=True, null=True)
     is_pdf = models.BooleanField(blank=True, null=True)
     is_video = models.BooleanField(blank=True, null=True)
     have_questions = models.BooleanField(blank=True, null=True)
@@ -462,7 +462,7 @@ class Levels(models.Model):
     name = models.CharField(max_length=255, db_collation='SQL_Latin1_General_CP1_CI_AS')
     imgurl = models.TextField(db_column='imgUrl', db_collation='SQL_Latin1_General_CP1_CI_AS', blank=True, null=True)  # Field name made lowercase.
     description = models.TextField(db_collation='SQL_Latin1_General_CP1_CI_AS', blank=True, null=True)
-    parent = models.ForeignKey('self', models.DO_NOTHING, blank=True, null=True)
+    parent = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True)
     slug = models.CharField(max_length=255, db_collation='SQL_Latin1_General_CP1_CI_AS', blank=True, null=True)
     deleted_at = models.DateTimeField(blank=True, null=True)
     created_at = models.DateTimeField(blank=True, null=True)
@@ -512,7 +512,7 @@ class Maps(models.Model):
     color = models.CharField(max_length=255, db_collation='SQL_Latin1_General_CP1_CI_AS', blank=True, null=True)
     procedure = models.ForeignKey('Procedures', models.DO_NOTHING)
     type = models.ForeignKey(MapTypes, models.DO_NOTHING)
-    parent = models.ForeignKey('self', models.DO_NOTHING, blank=True, null=True)
+    parent = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True)
     deleted_at = models.DateTimeField(blank=True, null=True)
     created_at = models.DateTimeField(blank=True, null=True)
     updated_at = models.DateTimeField(blank=True, null=True)
