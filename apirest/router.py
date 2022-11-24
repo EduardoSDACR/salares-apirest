@@ -4,6 +4,7 @@ from apirest.views import *
 router_apirest = DefaultRouter()
 
 # Routes
+router_apirest.register(prefix='Share_File', basename='Share_File', viewset=Share_File)
 router_apirest.register(prefix='ActionShape', basename='ActionShape', viewset=ActionShape)
 router_apirest.register(prefix='Actions', basename='Actions', viewset=Actions)
 router_apirest.register(prefix='Attachments', basename='Attachments', viewset=Attachments)

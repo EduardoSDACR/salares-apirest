@@ -383,6 +383,11 @@ class Files(models.Model):
         managed = False
         db_table = 'files'
 
+class Share_File(models.Model):
+    origin_file = models.ForeignKey(Files, related_name='origin',on_delete=models.CASCADE)
+    #type_share = models.BooleanField(blank=True, null=True)
+    #pagina = models.CharField(max_length=255, blank=True, null=True)
+    share_id = models.ForeignKey(Files, on_delete=models.CASCADE,related_name='share' ,null=True, blank=True)
 
 class Historicals(models.Model):
     id = models.BigAutoField(primary_key=True)

@@ -4,6 +4,7 @@ from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import IsAuthenticated
 
 class ActionShape(ModelViewSet):
+    #permission_classes = [IsAuthenticated]
     serializer_class = ActionShapeSerializer
     queryset = ActionShape.objects.all()
 
@@ -70,6 +71,10 @@ class FailedJobs(ModelViewSet):
 class Files(ModelViewSet):
     serializer_class = FilesSerializer
     queryset = Files.objects.all()
+
+class Share_File(ModelViewSet):
+    serializer_class = Share_FileSerializer
+    queryset = Share_File.objects.all()
 
 class Historicals(ModelViewSet):
     serializer_class = HistoricalsSerializer

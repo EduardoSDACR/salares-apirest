@@ -87,6 +87,11 @@ class FilesSerializer(ModelSerializer):
         model=Files
         fields='__all__'
 
+class Share_FileSerializer(ModelSerializer):
+    class Meta:
+        model=Share_File
+        fields='__all__'
+
 class HistoricalsSerializer(ModelSerializer):
     class Meta:
         model=Historicals
