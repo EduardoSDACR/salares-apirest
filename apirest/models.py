@@ -551,7 +551,7 @@ class Options(models.Model):
 
 
 class PasswordResets(models.Model):
-    email = models.CharField(max_length=255, db_collation='SQL_Latin1_General_CP1_CI_AS')
+    email = models.CharField(max_length=255, db_collation='SQL_Latin1_General_CP1_CI_AS', primary_key=True)
     token = models.CharField(max_length=255, db_collation='SQL_Latin1_General_CP1_CI_AS')
     created_at = models.DateTimeField(blank=True, null=True)
 
